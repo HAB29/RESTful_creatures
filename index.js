@@ -1,23 +1,26 @@
-// npm i express express-ejs-layouts
 const express = require('express')
 const ejsLayouts = require('express-ejs-layouts')
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
 const app = express()
+const PORT = 3500
 
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
-app.use(express.urlencoded({extended:false}))
+
+app.use(methodOverride('_method'));
+
+//body-parser middleware
+app.use(express.urlencoded({extended: false}))
+
+app.use('/dinosaurs',require('./controllers/dinosaurs'))
+app.use('/prehistoric_creatures',require('./controllers/prehistoric_creatures'))
 
 
-app.use(methodOverride('_method'))
 
-app.use(express.urlencoded({extended:false}))
-//has to be down
-app.use('/dinosaurs', require('./controllers/dinosaurs'))
-app.get('/', (req,res) => {
-    res.redirect('/dinosaurs')
-})
+// app.get('/',(req,res)=>{
+//     res.redirect('/show')
+// })
 
-app.listen(3500, () => {
-    console.log('App listening on port 3500!')
+app.listen(PORT, ()=>{
+    console.log(`App listening on port ${PORT}`)
 })

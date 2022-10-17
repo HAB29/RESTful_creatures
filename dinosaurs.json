@@ -1,1 +1,7 @@
-[{"name":"1234","type":"saurolophus"},{"name":"Petrie","type":"pteranodon"},{"name":"Spike","type":"stegosaurus"}]
+[{"name":"Little Foot","type":"apatosaurus"},
+{"name":"Cera","type":"triceratops"},
+{"name":"Ducky","type":"saurolophus"},
+{"name":"Petrie","type":"pteranodon"},
+{"type":"T-Rex","name":"Fluffy"},
+{"type":"Albertosaurus libratus","name":"Jo"},
+{"type":"Apatosaurus excelsus","name":"Pepa"}]
